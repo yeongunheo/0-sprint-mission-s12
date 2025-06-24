@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.NoSuchElementException;
 import java.util.UUID;
+
+import com.sprint.mission.discodeit.entity.BinaryContentUploadStatus;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -130,7 +132,7 @@ class S3BinaryContentStorageTest {
     // given
     s3BinaryContentStorage.put(testId, testData);
     BinaryContentDto dto = new BinaryContentDto(
-        testId, "test.txt", (long) testData.length, "text/plain"
+        testId, "test.txt", (long) testData.length, "text/plain", BinaryContentUploadStatus.SUCCESS
     );
 
     // when
